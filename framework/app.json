@@ -1,0 +1,18 @@
+{
+  "app": {
+    "environments": {
+      "local": { "url": "http://localhost:5000/" },
+      "fat": { "url": "https://fat2ax-mpwealthdev.msappproxy.net/" },
+      "sit": { "url": "https://sit2ax-mpwealthuat.msappproxy.net/" }
+    },
+    "waitTimes": {
+    },
+    "elements": {
+      "loginPage": {
+        "usernameField": { "selector": "//input[@id='username']" },
+        "passwordField": { "selector": "//input[@id='password']" },
+        "loginButton": { "selector": "//button[@id='login']" }
+      }
+    }
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "definitions": {
+    "condition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target",
+        "attribute",
+        "state"
+      ],
+      "properties": {
+        "target": {
+          "type": "string",
+          "enum": [
+            "browser",
+            "element"
+          ]
+        },
+        "elementReference": {
+          "type": "string"
+        },
+        "attribute": {
+          "type": "string"
+        },
+        "state": {}
+      },
+      "anyOf": [
+        {
+          "properties": {
+            "target": { "enum": ["element"] }
+          },
+          "required": [
+            "target",
+            "elementReference",
+            "attribute",
+            "state"
+          ]
+        },
+        {
+          "properties": {
+            "target": { "enum": ["browser"] }
+          },
+          "required": [
+            "target",
+            "attribute",
+            "state"
+          ]
+        }
+      ]
+    },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "task",
+        "preConditions",
+        "postConditions",
+        "data"
+      ],
+      "properties": {
+        "task": {
+          "type": "string",
+          "enum": [
+            "navigate",
+            "createClient",
+            "searchClient",
+            "deleteClient",
+            "illustrate",
+            "copyIllustration",
+            "deleteIllustration",
+            "editClient",
+            "apply",
+            "takeMoneyOut"
+          ]
+        },
+        "preConditions": {
+          "type": "array",
+          "additionalProperties": false,
+          "items": {
+            "$ref": "#/definitions/condition"
+          }
+        },
+        "postConditions": {
+          "type": "array",
+          "additionalProperties": false,
+          "items": {
+            "$ref": "#/definitions/condition"
+          }
+        },
+        "data": {
+          "type": "object"
+        },
+        "interrupts": {
+          "type": "object"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "suite"
+  ],
+  "properties": {
+    "suite": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "tests"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "default": ""
+        },
+        "tests": {
+          "type": "array",
+          "additionalProperties": false,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "description",
+              "feature",
+              "retry",
+              "role",
+              "goal",
+              "setUpTasks",
+              "tearDownTasks",
+              "testTasks"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "default": ""
+              },
+              "description": {
+                "type": "string",
+                "default": ""
+              },
+              "feature": {
+                "type": "string",
+                "default": ""
+              },
+              "retry": {
+                "type": "number",
+                "default": 0
+              },
+              "ignore": {
+                "type": "boolean",
+                "default": false
+              },
+              "reason": {
+                "type": "string",
+                "default": ""
+              },
+              "role": {
+                "type": "string",
+                "default": ""
+              },
+              "goal": {
+                "type": "string",
+                "default": ""
+              },
+              "setUpTasks": {
+                "type": "array",
+                "additionalProperties": false,
+                "items": {
+                  "$ref": "#/definitions/task"
+                }
+              },
+              "tearDownTasks": {
+                "type": "array",
+                "additionalProperties": false,
+                "items": {
+                  "$ref": "#/definitions/task"
+                }
+              },
+              "testTasks": {
+                "type": "array",
+                "additionalProperties": false,
+                "items": {
+                  "$ref": "#/definitions/task"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
