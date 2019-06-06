@@ -5,16 +5,7 @@
     "regression-tests": "wdio config/regression-test-conf.js",
     "allure-generate": "allure generate ./reporting/allure-results -o ./reporting/allure-report --clean",
     "allure-zip": "zip -r ./reporting/allure-report.zip ./reporting/allure-report",
-    "allure-open": "allure open ./reporting/allure-report",
-    "lint": "eslint . -c ../../web/.eslintrc.js",
-    "lint:fix": "npm run lint -- --fix"
-  },
-  "config": {
-    "ademail": "",
-    "adpassword": "",
-    "adviserusername": "",
-    "adviserpassword": "",
-    "adviseruserid": ""
+    "allure-open": "allure open ./reporting/allure-report"
   },
   "dependencies": {
     "@types/date-fns": "2.6.0",
@@ -25,20 +16,11 @@
     "browserstack-local": "latest",
     "date-fns": "1.29.0",
     "deepmerge": "^2.1.0",
-    "eslint": "^5.1.0",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-plugin-extra-rules": "0.0.0-development",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.10.0",
-    "eslint-plugin-typescript": "^0.12.0",
     "fake-nino": "0.0.1",
     "jasmine-data-provider": "^2.2.0",
     "jsonschema": "^1.2.4",
     "minimist": "^1.2.0",
     "node-cmd": "^3.0.0",
-    "typescript": "^2.9.2",
-    "typescript-eslint-parser": "^16.0.1",
     "wdio-allure-fnb-reporter": "^0.6.4",
     "wdio-browserstack-service": "^0.1.14",
     "wdio-jasmine-framework": "^0.3.2",

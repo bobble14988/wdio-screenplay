@@ -4,7 +4,6 @@ Instructions below for running automated UI tests.
 ```
 cd <workspace-dir>/wealth/test/ui
 npm install
-npm config set ui-tests:adviseruserid 1111CFK
 ```
 ### Before Each Run
 Run the below in a separate terminal window and keep open.
@@ -19,21 +18,18 @@ TL;DR: `--versions.chrome=<driver-version>`
 Chrome/chromedriver compatibility information: https://sites.google.com/a/chromium.org/chromedriver/downloads
 ### Executing Tests
 ```
-npm run smoke-tests -- --env local
-
-npm run regression-tests -- --env local
+npm run smoke-tests -- --env [local|fat|sit]
 ```
 The available environments are as follows:
 ```
 "local": { "url": "http://localhost:5000/" },
-"demo": { "url": "https://demoax-mpwealthdev.msappproxy.net/" },
-"ci": { "url": "https://ci2ax-mpwealthdev.msappproxy.net/" },
-"buy": { "url": "https://buyax-mpwealthdev.msappproxy.net/" },
-"fat": { "url": "https://fat2ax-mpwealthdev.msappproxy.net/" },
-"sit": { "url": "https://sit2ax-mpwealthuat.msappproxy.net/" }
+"fat": { "url": "https://fat.mytestenvironment.com/" },
+"sit": { "url": "https://sit.mytestenvironment.com/" }
 ```
-If your environment has Active Directory and/or PALA enabled, additional npm config parameters are required.
 ### Available Parameters
-`--env <env-name>` Provides the environment to run against. Must match an environment in `app.json`.
+`--env <env-name>` (Required) Provides the environment to run against. Must match an environment in `app.json`.
 `--only <test-id>` Only executes one test in the pack with the given ID.
-`--debug <true|false>` Pauses execution upon a test failure to enable debugging.
+`--debug` Pauses execution upon a test failure to enable debugging.
+`--validateFields` Validates UI input field rules. Rules specified within element.js -> validateFieldRules() function.
+`--takeScreenshot` Takes a screenshot where instructed in the test tasks' execute() functions.
+`--browserReset` Kills Chrome with 'pkill Chrome' command during framework initialisation.

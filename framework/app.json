@@ -2,8 +2,8 @@
   "app": {
     "environments": {
       "local": { "url": "http://localhost:5000/" },
-      "fat": { "url": "https://fat2ax-mpwealthdev.msappproxy.net/" },
-      "sit": { "url": "https://sit2ax-mpwealthuat.msappproxy.net/" }
+      "fat": { "url": "https://fat.mytestenvironment.com/" },
+      "sit": { "url": "https://sit.mytestenvironment.com/" }
     },
     "waitTimes": {
     },
