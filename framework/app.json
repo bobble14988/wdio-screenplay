@@ -5,13 +5,40 @@
       "fat": { "url": "https://fat.mytestenvironment.com/" },
       "sit": { "url": "https://sit.mytestenvironment.com/" }
     },
-    "waitTimes": {
-    },
     "elements": {
-      "loginPage": {
-        "usernameField": { "selector": "//input[@id='username']" },
-        "passwordField": { "selector": "//input[@id='password']" },
-        "loginButton": { "selector": "//button[@id='login']" }
+      "homePage": {
+        "signInButton": { "selector": "//a[@title='Log in to your customer account']" }
+      },
+      "signInPage": {
+        "emailField": { "selector": "//input[@id='email']" },
+        "passwordField": { "selector": "//input[@id='passwd']" },
+        "signInButton": { "selector": "//button[@id='SubmitLogin']" },
+        "createAccountEmailField": { "selector": "//input[@id='email_create']" },
+        "createAnAccountButton": { "selector": "//button[@id='SubmitCreate']" }
+      },
+      "createAnAccountPage": {
+        "titleMrRadioButton": { "selector": "//input[@id='id_gender1']" },
+        "titleMrsRadioButton": { "selector": "//input[@id='id_gender2']" },
+        "firstNameField": { "selector": "//input[@id='customer_firstname']" },
+        "lastNameField": { "selector": "//input[@id='customer_lastname']" },
+        "emailField": { "selector": "//input[@id='email']" },
+        "passwordField": { "selector": "//input[@id='passwd']" },
+        "dateOfBirthDaySelect": { "selector": "//select[@id='days']" },
+        "dateOfBirthMonthSelect": { "selector": "//select[@id='months']" },
+        "dateOfBirthYearSelect": { "selector": "//select[@id='years']" },
+        "addressFirstNameField": { "selector": "//input[@id='firstname']" },
+        "addressLastNameField": { "selector": "//input[@id='lastname']" },
+        "addressCompanyField": { "selector": "//input[@id='company']" },
+        "addressLine1Field": { "selector": "//input[@id='address1']" },
+        "addressLine2Field": { "selector": "//input[@id='address2']" },
+        "cityField": { "selector": "//input[@id='city']" },
+        "stateSelect": { "selector": "//select[@id='id_state']" },
+        "postcodeField": { "selector": "//input[@id='postcode']" },
+        "countrySelect": { "selector": "//select[@id='id_country']" },
+        "homePhoneField": { "selector": "//input[@id='phone']" },
+        "mobileNumberField": { "selector": "//input[@id='phone_mobile']" },
+        "aliasField": { "selector": "//input[@id='alias']" },
+        "registerButton": { "selector": "//button[@id='submitAccount']" }
       }
     }
   }

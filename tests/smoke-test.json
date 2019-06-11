@@ -3,37 +3,72 @@
     "name": "Smoke Tests",
     "tests": [
       {
-        "id": "TestNumberOne",
-        "description": "As a customer I can log in",
-        "feature": "FeatureId123",
+        "id": "SignIn1",
+        "description": "As a customer I can sign in",
+        "feature": "SignIn",
         "ignore": false,
         "retry": 0,
         "role": "Customer",
-        "goal": "LogIn",
-        "setUpTasks": [
-          {
-            "task": "navigate",
-            "preConditions": [
-              { "target": "browser", "attribute": "open", "state": true }
-            ],
-            "postConditions": [
-              { "target": "browser", "attribute": "path", "state": "/login" }
-            ],
-            "data": { "path": "login" }
-          }
-        ],
+        "goal": "SignIn",
+        "setUpTasks": [],
         "tearDownTasks": [],
         "testTasks": [
           {
-            "task": "login",
+            "task": "signIn",
             "preConditions": [
-              { "target": "browser", "attribute": "path", "state": "/login" },
-              { "target": "element", "elementReference": "app.elements.loginPage.loginButton", "attribute": "visible", "state": true }
+              { "target": "element", "elementReference": "app.elements.homePage.signInButton", "attribute": "visible", "state": true }
             ],
             "postConditions": [],
             "data": {
-              "loginDetails": {
-                "username": "johnsmith", "password": "superman123"
+              "signInDetails": {
+                "email": "johnsmith@domain.com", "password": "superman123"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "SignIn2",
+        "description": "As a customer I can create an account",
+        "feature": "CreateAccount",
+        "ignore": false,
+        "retry": 0,
+        "role": "NewCustomer",
+        "goal": "SignIn",
+        "setUpTasks": [],
+        "tearDownTasks": [],
+        "testTasks": [
+          {
+            "task": "createAccount",
+            "preConditions": [
+              { "target": "element", "elementReference": "app.elements.homePage.signInButton", "attribute": "visible", "state": true }
+            ],
+            "postConditions": [],
+            "data": {
+              "accountDetails": {
+                "personalDetails": {
+                  "title": "Mr",
+                  "firstName": "John",
+                  "lastName": "Smith",
+                  "email": "johnsmith@domain.com",
+                  "password": "superman123",
+                  "dateOfBirth": {
+                    "day": "11",
+                    "month": "June",
+                    "year": "1960"
+                  }
+                },
+                "addressDetails": {
+                  "company": "Acme",
+                  "line1": "1 A Road",
+                  "line2": "An area",
+                  "city": "Fakesville",
+                  "state": "Alabama",
+                  "postcode": "AA121AA",
+                  "country": "United States",
+                  "mobilePhone": "07777777777",
+                  "alias": "Home"
+                }
               }
             }
           }
