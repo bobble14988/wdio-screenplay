@@ -2,7 +2,7 @@ import { fail } from 'assert';
 
 /**
  * @file element.js 
- * @author Rob Livermore <rlivermore@deloitte.co.uk>
+ * @author Rob Livermore <robert_livermore@hotmail.co.uk>
  * 
  * This file contains the Element class and functions enabling bespoke interactions
  * with Selenium WebDriver elements.

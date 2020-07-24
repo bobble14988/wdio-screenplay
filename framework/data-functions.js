@@ -1,6 +1,6 @@
 /**
  * @file data-functions.js
- * @author Rob Livermore <rlivermore@deloitte.co.uk>
+ * @author Rob Livermore <robert_livermore@hotmail.co.uk>
  * 
  * This file contains exported functions which can be implicitly called from test 
  * data in string form by wrapping the function name around braces, e.g. {getRandomString}
