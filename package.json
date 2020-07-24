@@ -19,7 +19,7 @@
     "fake-nino": "0.0.1",
     "jasmine-data-provider": "^2.2.0",
     "jsonschema": "^1.2.4",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.3",
     "node-cmd": "^3.0.0",
     "wdio-allure-fnb-reporter": "^0.6.4",
     "wdio-browserstack-service": "^0.1.14",
